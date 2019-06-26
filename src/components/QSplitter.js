@@ -6,7 +6,6 @@ component.props = {
   details: Boolean,
   ...QSplitter.options.props
 }
-console.log(QSplitter.options.props.limits)
 component.methods = Object.keys(QSplitter.options.methods).reduce((methods, name) => {
   methods[name] = function () {
     this.$refs.component[name].apply(this.$refs.component, arguments)
@@ -51,11 +50,6 @@ component.computed = {
         this.$emit('update:limits', value)
       }
     }
-  }
-}
-component.watch = {
-  __limits () {
-    console.log(this.__limits)
   }
 }
 component.render = function (h) {
